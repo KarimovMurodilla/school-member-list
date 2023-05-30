@@ -1,0 +1,60 @@
+{% extends 'members/base.html' %}
+{% load static %}
+
+
+{% block hero_header %}
+    <div class="container-xxl py-5 bg-primary hero-header">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-12 text-center">
+                    <h1 class="text-white animated slideInDown">Darslar</h1>
+                    <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock hero_header %}
+
+{% block content %}
+        <!-- Lessons Start -->
+        <div class="container-xxl py-5">
+            <div class="container py-5 px-lg-5">
+                <div class="wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary justify-content-center"><span></span>Darslar<span></span></p>
+                    <h1 class="text-center mb-5">1-11 sinflar uchun darslar</h1>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            {% for obj in object_list %}
+                                <li class="mx-2" data-filter=".{{ obj.class_number }}">{{ obj.class_number }} sinf</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row g-4 portfolio-container">
+                    {% for obj in object_list %}
+                        {% for sub in obj.subject_set.all %}
+                                <div class="col-lg-4 col-md-6 portfolio-item {{ obj.class_number }} wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <img class="img-fluid w-100" src="{{ sub.image.url }}" alt="">
+                                            <div class="portfolio-overlay">
+                                                <a class="btn btn-square btn-outline-light mx-1" href="{{ sub.image.url }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                                                <a class="btn btn-square btn-outline-light mx-1" href=""><i class="fa fa-link"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="bg-light p-4">
+                                            <p class="text-primary fw-medium mb-2">{{ sub.title }}</p>
+                                            <h5 class="lh-base mb-0">{{ sub.description }}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Lessons End -->
+{% endblock content %}

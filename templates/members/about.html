@@ -1,0 +1,35 @@
+{% extends 'members/base.html' %}
+{% load static %}
+
+
+{% block hero_header %}
+    <div class="container-xxl py-5 bg-primary hero-header">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-12 text-center">
+                    <h1 class="text-white animated slideInDown">Biz haqimizda</h1>
+                    <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock hero_header %}
+
+{% block content %}
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container py-5 px-lg-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="section-title text-secondary">Biz haqimizda<span></span></p>
+                    <h1 class="mb-5">Umumiy ma'lumot</h1>
+                    <p class="mb-4">Fargʻona viloyati Oʻzbekiston tumani Dasturxonchi qishlogʻida joylashgan maktab</p>
+                </div>
+                <div class="col-lg-6">
+                    <img class="img-fluid wow zoomIn" data-wow-delay="0.5s" src="{% static 'members/img/about.png' %}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+{% endblock content %}

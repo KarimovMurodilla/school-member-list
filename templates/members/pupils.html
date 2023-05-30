@@ -1,0 +1,57 @@
+{% extends 'members/base.html' %}
+
+
+{% block hero_header %}
+<div class="container-xxl py-5 bg-primary hero-header">
+    <div class="container my-5 py-5 px-lg-5">
+        <div class="row g-5 py-5">
+            <div class="col-12 text-center">
+                <h1 class="text-white animated slideInDown">O'quvchilar</h1>
+                <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock hero_header %}
+
+
+{% block content %}
+<!-- O'quvchilar Start -->
+<div class="container-xxl py-5">
+    <div class="container py-5 px-lg-5">
+        <div class="wow fadeInUp" data-wow-delay="0.1s">
+            <p class="section-title text-secondary justify-content-center"><span></span>O'quvchilar<span></span></p>
+            <h1 class="text-center mb-5">O'quvchilar ro'yhati</h1>
+        </div>
+        <div class="row g-4">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">№</th>
+                        <th scope="col">O'quv yili</th>
+                        <th scope="col">Sinflar</th>
+                        <th scope="col">F.I.SH</th>
+                        <th scope="col">Tug'ilgan yili</th>
+                        <th scope="col">Jinsi</th>
+                        <th scope="col">Boshlanish vaqti</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for obj in object_list %}
+                        <tr>
+                            <th scope="row">{{ obj.id }}</th>
+                            <td>{{ obj.year }}</td>
+                            <td>{{ obj.school_class }}</td>
+                            <td>{{ obj.fullname }}</td>
+                            <td>{{ obj.date_of_birth }}</td>
+                            <td>{{ obj.gender }}</td>
+                            <td>{{ obj.start_date }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- O'quvchilar End -->
+{% endblock content %}

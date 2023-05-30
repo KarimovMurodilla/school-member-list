@@ -1,0 +1,49 @@
+{% extends 'members/base.html' %}
+{% load static %}
+
+
+{% block hero_header %}
+    <div class="container-xxl py-5 bg-primary hero-header">
+        <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 py-5">
+                <div class="col-12 text-center">
+                    <h1 class="text-white animated slideInDown">Odob-axloq qoidalari</h1>
+                    <hr class="bg-white mx-auto mt-0" style="width: 90px;">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock hero_header %}
+
+{% block content %}
+    <div class="container-xxl py-5">
+        <div class="container py-5 px-lg-5">
+            <div class="wow fadeInUp" data-wow-delay="0.1s">
+                <p class="section-title text-secondary justify-content-center"><span></span>Odob-axloq<span></span></p>
+                <h1 class="text-center mb-5">Odob-axloq qoidalari</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item d-flex flex-column text-center rounded">
+                        <div class="service-icon flex-shrink-0">
+                            <i class="fa fa-book fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Kitob shaklida</h5>
+                        <p class="m-0">Umumiy o'rta ta'lim muassasalarining ichki tartib va odob-axloq qoidalari (pdf)</p>
+                        <a class="btn btn-square" href="https://maktab.uz/img/439dce7f77fc0585a48a2ae848c59357.pdf" download="{% static 'members/439dce7f77fc0585a48a2ae848c59357.pdf' %}'"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item d-flex flex-column text-center rounded">
+                        <div class="service-icon flex-shrink-0">
+                            <i class="fa fa-video fa-2x"></i>
+                        </div>
+                        <h5 class="mb-3">Videorolik shaklida</h5>
+                        <p class="m-0">Umumiy o'rta ta'lim muassasalarining ichki tartib va odob-axloq qoidalari (videorolik)</p>
+                        <a class="btn btn-square" href="https://maktab.uz/img/83ecb21cb19225aa785c34df592ae743.m4v"><i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
