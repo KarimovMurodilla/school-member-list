@@ -40,7 +40,6 @@ develop-eggs/
 dist/
 downloads/
 eggs/
-lib/
 lib64/
 parts/
 sdist/
@@ -89,10 +88,6 @@ local_settings.py
 db.sqlite3
 
 digital-1-1.0.0
-
-*.jpg
-*.jpeg
-*.png
 
 34-maktab
 *.zip
