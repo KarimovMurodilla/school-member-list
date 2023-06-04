@@ -48,10 +48,9 @@ class ClassNumber(models.Model):
             MaxValueValidator(11, message="O'zbekistonda 11 dan katta sinf yo'qku =)")
         ]
     )
-    title = models.CharField("Nomi", max_length=50)
 
     def __str__(self):
-        return self.title
+        return str(self.class_number)
 
     class Meta:
         verbose_name = "Sinf"

@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from .models import Teacher, Pupil, Lesson, Subject, ClassNumber
 
@@ -54,3 +54,8 @@ class EtiquetteListView(ListView):
 class ClassNumberListView(ListView):
     model = ClassNumber
     template_name = 'members/lesson.html'
+
+
+class LessonDetailView(DetailView):
+    model = Subject
+    template_name = 'members/lesson_detail.html'

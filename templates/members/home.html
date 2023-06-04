@@ -100,7 +100,7 @@
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center"><span></span>O'qituvchilar<span></span></p>
-                <h1 class="text-center mb-5">O'qituvchilar</h1>
+                <h1 class="text-center mb-5">O'qituvchilar ro'yhati</h1>
             </div>
             <div class="row g-4">
                 <table class="table table-hover">
@@ -117,44 +117,25 @@
                         <th scope="col">JSHIR</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@111</td>
-                        <td>@111</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        </tr>
+                        {% for obj in object_list %}
+                            <tr>
+                                <th scope="row">{{ obj.id }}</th>
+                                <td>{{ obj.job_title }}</td>
+                                <td>{{ obj.graphic }}</td>
+                                <td>{{ obj.start_date }}</td>
+                                <td>{{ obj.fullname }}</td>
+                                <td>{{ obj.date_of_birth }}</td>
+                                <td>{{ obj.gender }}</td>
+                                <td>{{ obj.inn }}</td>
+                                <td>{{ obj.pinfl }}</td>
+                            </tr>	
+                        {% endfor %}
                     </tbody>
-                    </table>
+                </table>
             </div>
-        </div>
+        </div>		
     </div>
     <!-- O'qituvchilar End -->
     
@@ -163,51 +144,35 @@
         <div class="container py-5 px-lg-5">
             <div class="wow fadeInUp" data-wow-delay="0.1s">
                 <p class="section-title text-secondary justify-content-center"><span></span>O'quvchilar<span></span></p>
-                <h1 class="text-center mb-5">O'quvchilar</h1>
+                <h1 class="text-center mb-5">O'quvchilar ro'yhati</h1>
             </div>
             <div class="row g-4">
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                        <th scope="col">№</th>
-                        <th scope="col">O'quv yili</th>
-                        <th scope="col">Sinflar</th>
-                        <th scope="col">F.I.SH</th>
-                        <th scope="col">Tug'ilgan yili</th>
-                        <th scope="col">Jinsi</th>
-                        <th scope="col">Boshlanish vaqti</th>
+                            <th scope="col">№</th>
+                            <th scope="col">O'quv yili</th>
+                            <th scope="col">Sinflar</th>
+                            <th scope="col">F.I.SH</th>
+                            <th scope="col">Tug'ilgan yili</th>
+                            <th scope="col">Jinsi</th>
+                            <th scope="col">Boshlanish vaqti</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        <td>@fat</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        <td>@twitter</td>
-                        </tr>
+                        {% for obj in object_list %}
+                            <tr>
+                                <th scope="row">{{ obj.id }}</th>
+                                <td>{{ obj.year }}</td>
+                                <td>{{ obj.school_class }}</td>
+                                <td>{{ obj.fullname }}</td>
+                                <td>{{ obj.date_of_birth }}</td>
+                                <td>{{ obj.gender }}</td>
+                                <td>{{ obj.start_date }}</td>
+                            </tr>
+                        {% endfor %}
                     </tbody>
-                    </table>
+                </table>
             </div>
         </div>
     </div>

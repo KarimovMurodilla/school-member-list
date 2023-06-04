@@ -15,7 +15,7 @@ class LessonInline(admin.TabularInline):
 
 @admin.register(ClassNumber)
 class ClassNumberAdmin(admin.ModelAdmin):
-    list_display = ['class_number', 'title']
+    list_display = ['class_number',]
     # inlines = [SubjectInline]
 
 
