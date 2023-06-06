@@ -56,6 +56,7 @@ class ClassNumberListView(ListView):
     template_name = 'members/lesson.html'
 
 
-class LessonDetailView(DetailView):
+class SubjectDetailView(DetailView):
     model = Subject
-    template_name = 'members/lesson_detail.html'
+    template_name = 'members/subject_detail.html'
+    slug_field = "title"

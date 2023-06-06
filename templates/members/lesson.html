@@ -42,7 +42,7 @@
                                             <img class="img-fluid w-100" src="{{ sub.image.url }}" alt="">
                                             <div class="portfolio-overlay">
                                                 <a class="btn btn-square btn-outline-light mx-1" href="{{ sub.image.url }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                                                <a class="btn btn-square btn-outline-light mx-1" href="{{ obj.class_number }}"><i class="fa fa-link"></i></a>
+                                                <a class="btn btn-square btn-outline-light mx-1" href="{% url 'lesson' obj.class_number sub.title %}"><i class="fa fa-link"></i></a>
                                             </div>
                                         </div>
                                         <div class="bg-light p-4">
