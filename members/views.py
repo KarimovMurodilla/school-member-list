@@ -22,11 +22,13 @@ class AboutListView(ListView):
 
 class TeacherListView(ListView):
     model = Teacher
+    ordering = ['id']
     template_name = 'members/teachers.html'
 
 
 class PupilListView(ListView):
     model = Pupil
+    ordering = ['id']
     template_name = 'members/pupils.html'
 
 
