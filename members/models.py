@@ -83,3 +83,15 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = "Dars"
         verbose_name_plural = "Darslar"   
+
+
+
+# ---Feedbacks---
+class Feedback(models.Model):
+    name = models.CharField("Ism", max_length=50)
+    email = models.EmailField("Email")
+    subject = models.CharField("Mavzu", max_length=150)
+    message = models.TextField("Habar", max_length=4000)
+
+    def __str__(self):
+        return self.name

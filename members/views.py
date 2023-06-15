@@ -1,6 +1,6 @@
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 
-from .models import Teacher, Pupil, Lesson, Subject, ClassNumber
+from .models import Teacher, Pupil, Feedback, Subject, ClassNumber
 
 
 class HomeListView(ListView):
@@ -63,3 +63,13 @@ class SubjectDetailView(DetailView):
     template_name = 'members/subject_detail.html'
     pk_url_kwarg = "classes__class_number"
     slug_field = "title"
+
+
+# ---Feedback---
+class FeedbackCreateView(CreateView):
+    model = Feedback
+    template_name = 'members/contact.html'
+    fields = ('name', 'email', 'subject', 'message',)
+
+    def form_valid(self, form):
+        return super().form_valid(form)
