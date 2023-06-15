@@ -61,4 +61,5 @@ class ClassNumberListView(ListView):
 class SubjectDetailView(DetailView):
     model = Subject
     template_name = 'members/subject_detail.html'
+    pk_url_kwarg = "classes__class_number"
     slug_field = "title"

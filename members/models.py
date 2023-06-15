@@ -76,7 +76,6 @@ class Lesson(models.Model):
     title = models.CharField("Nomi", max_length=50)
     description = models.CharField("Qisqa ma'lumot", max_length=150)
     url = models.URLField("Dars uchun link", max_length=50)
-    image = models.ImageField("Rasm", upload_to='images/')
 
     def __str__(self):
         return self.title
