@@ -16,13 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 
 from .views import (
         HomeListView, AboutListView,
-        TeacherListView, PupilListView, 
-        ContactListView, EtiquetteListView, 
-        ClassNumberListView, SubjectDetailView,
-        FeedbackCreateView
+        TeacherListView, PupilListView,
+        EtiquetteListView, ClassNumberListView, 
+        SubjectDetailView, FeedbackCreateView
     )
 
 urlpatterns = [
@@ -30,9 +30,9 @@ urlpatterns = [
     path('about/', AboutListView.as_view(), name='about'),
     path('teachers/', TeacherListView.as_view(), name='teachers'),
     path('pupils/', PupilListView.as_view(), name='pupils'),
-    path('contact/', ContactListView.as_view(), name='contact'),
     path('etiquette/', EtiquetteListView.as_view(), name='etiquette'),
     path('subject/', ClassNumberListView.as_view(), name='subject'),
     path('lesson/<int:pk>/<str:slug>/', SubjectDetailView.as_view(), name='lesson'),
-    path('feedback/', FeedbackCreateView.as_view(), name='feedback'),
+    path('contact/', FeedbackCreateView.as_view(), name='contact'),
+    path('thank-you/', TemplateView.as_view(template_name='members/thank-you.html'), name='thank_you'),
 ]

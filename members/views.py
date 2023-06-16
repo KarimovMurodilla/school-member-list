@@ -1,7 +1,9 @@
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView
 
 from .models import Teacher, Pupil, Feedback, Subject, ClassNumber
 
+from .forms import FeedbackForm
 
 class HomeListView(ListView):
     model = Teacher
@@ -39,13 +41,6 @@ class ContactListView(ListView):
         return None
 
 
-class ContactListView(ListView):
-    template_name = 'members/contact.html'
-
-    def get_queryset(self):
-        return None
-
-
 class EtiquetteListView(ListView):
     template_name = 'members/etiquette.html'
 
@@ -68,8 +63,6 @@ class SubjectDetailView(DetailView):
 # ---Feedback---
 class FeedbackCreateView(CreateView):
     model = Feedback
+    form_class = FeedbackForm
     template_name = 'members/contact.html'
-    fields = ('name', 'email', 'subject', 'message',)
-
-    def form_valid(self, form):
-        return super().form_valid(form)
+    success_url = '/thank-you/'
