@@ -7,6 +7,7 @@ from .forms import FeedbackForm
 
 class HomeListView(ListView):
     model = Teacher
+    ordering = ['id']
     template_name = 'members/home.html'
 
     def get_context_data(self, **kwargs):
