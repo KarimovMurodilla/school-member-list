@@ -164,10 +164,15 @@ AWS_HEADERS = {
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+if DEBUG:
+    STATIC_URL = 'static/'
+    STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]
+    # STATIC_ROOT = str(BASE_DIR.joinpath('staticfiles'))
 
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+else:
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
 
 # STATIC_URL = 'static/'
 # # STATICFILES_DIRS = [str(BASE_DIR.joinpath('static'))]

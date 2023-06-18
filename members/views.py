@@ -1,7 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView
 
-from .models import Teacher, Pupil, Feedback, Subject, ClassNumber
+from .models import Teacher, Pupil, Feedback, Subject, ClassNumber, Post
 
 from .forms import FeedbackForm
 
@@ -58,6 +58,12 @@ class SubjectDetailView(DetailView):
     template_name = 'members/subject_detail.html'
     pk_url_kwarg = "classes__class_number"
     slug_field = "title"
+
+
+# ---Posts---
+class PostListView(ListView):
+    model = Post
+    template_name = "members/post.html"
 
 
 # ---Feedback---

@@ -22,7 +22,7 @@ from .views import (
         HomeListView, AboutListView,
         TeacherListView, PupilListView,
         EtiquetteListView, ClassNumberListView, 
-        SubjectDetailView, FeedbackCreateView
+        SubjectDetailView, FeedbackCreateView, PostListView
     )
 
 urlpatterns = [
@@ -33,6 +33,7 @@ urlpatterns = [
     path('etiquette/', EtiquetteListView.as_view(), name='etiquette'),
     path('subject/', ClassNumberListView.as_view(), name='subject'),
     path('lesson/<int:pk>/<str:slug>/', SubjectDetailView.as_view(), name='lesson'),
+    path('posts/', PostListView.as_view(), name='post'),
     path('contact/', FeedbackCreateView.as_view(), name='contact'),
     path('thank-you/', TemplateView.as_view(template_name='members/thank-you.html'), name='thank_you'),
 ]

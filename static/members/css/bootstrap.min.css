@@ -300,9 +300,10 @@ figure {
     margin: 0 0 1rem
 }
 
-img,
-svg {
-    vertical-align: middle
+img, svg {
+    vertical-align: middle;
+    width: 100%;
+    height: 400px;
 }
 
 table {

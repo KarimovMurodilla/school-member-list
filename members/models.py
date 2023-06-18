@@ -85,6 +85,19 @@ class Lesson(models.Model):
         verbose_name_plural = "Darslar"   
 
 
+# ---Posts---
+class Post(models.Model):
+    title = models.CharField("Nomi", max_length=50)
+    description = models.TextField("Tavsifi")
+    image = models.ImageField("Rasm", upload_to='posts')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Yangilik"
+        verbose_name_plural = "Yangiliklar"  
 
 # ---Feedbacks---
 class Feedback(models.Model):

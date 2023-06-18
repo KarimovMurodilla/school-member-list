@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Pupil, Teacher, ClassNumber, Subject, Lesson, Feedback
+from .models import Pupil, Teacher, ClassNumber, Subject, Lesson, Feedback, Post
 
 
 class LessonInline(admin.TabularInline):
@@ -24,3 +24,4 @@ admin.site.register(Pupil)
 admin.site.register(Teacher)
 admin.site.register(Lesson)
 admin.site.register(Feedback)
+admin.site.register(Post)
